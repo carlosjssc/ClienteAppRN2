@@ -11,11 +11,9 @@ const dbPromise = (async () => {
       details TEXT -- Nova coluna para guardar dados extras em formato JSON
     );
   `);
-    // Opcional
   try {
     await db.execAsync('ALTER TABLE saved_items ADD COLUMN details TEXT;');
   } catch (e) {
-    // Ignora o erro se a coluna já existir
   }
   return db;
 })();
